@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Stream Studio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+    }
+    #streamVideo {
+      width: 100%;
+      height: 200px;
+      background: black;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Live Stream Studio</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="card">
+    <h2>Dashboard</h2>
+    <p>Welcome, <span id="userDisplay">Guest</span></p>
+    <button onclick="startStream()">Start Live Stream</button>
+    <div id="streamVideo"></div>
+  </div>
+
+</div>
+
+<script>
+  function login() {
+    const user = document.getElementById('username').value;
+    if(user) {
+      document.getElementById('userDisplay').innerText = user;
+      alert('Login successful!');
+    } else {
+      alert('Enter username!');
+    }
+  }
+
+  function startStream() {
+    const videoDiv = document.getElementById('streamVideo');
+    videoDiv.innerHTML = `<p style="color:white; text-align:center; padding-top:80px;">Live Stream Placeholder</p>`;
+    alert('Streaming started! (placeholder)');
+  }
+</script>
+
+</body>
+</html><iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" frameborder="0" allowfullscreen></iframe>function startStream() {
+  const videoDiv = document.getElementById('streamVideo');
+  // YouTube Live embed replace karo apne stream ID se
+  videoDiv.innerHTML = `<iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" frameborder="0" allowfullscreen></iframe>`;
+  alert('Live streaming started!');
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Stream Studio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+    }
+    #streamVideo {
+      width: 100%;
+      height: 250px;
+      background: black;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Live Stream Studio</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="card">
+    <h2>Dashboard</h2>
+    <p>Welcome, <span id="userDisplay">Guest</span></p>
+    <input type="text" id="videoId" placeholder="Enter YouTube Live Video ID">
+    <button onclick="startStream()">Start Live Stream</button>
+    <div id="streamVideo">
+      <p style="color:white; text-align:center; padding-top:100px;">Live Stream will appear here</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function login() {
+    const user = document.getElementById('username').value;
+    if(user) {
+      document.getElementById('userDisplay').innerText = user;
+      alert('Login successful!');
+    } else {
+      alert('Enter username!');
+    }
+  }
+
+  function startStream() {
+    const videoId = document.getElementById('videoId').value.trim();
+    if(!videoId) {
+      alert('Enter YouTube Live Video ID!');
+      return;
+    }
+    const videoDiv = document.getElementById('streamVideo');
+    videoDiv.innerHTML = `<iframe width="100%" height="250" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allowfullscreen></iframe>`;
+    alert('Live streaming started!');
+  }
+</script>
+
+</body>
+</html><div id="streamsGallery">
+  <div class="streamCard">
+    <h3>Stream 1</h3>
+    <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="streamCard">
+    <h3>Stream 2</h3>
+    <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>function sendMessage() {
+  const msgInput = document.getElementById('chatInput');
+  const msg = msgInput.value.trim();
+  if(!msg) return;
+  const chatBox = document.getElementById('chatBox');
+  const p = document.createElement('p');
+  p.innerText = msg;
+  chatBox.appendChild(p);
+  msgInput.value = '';
+}<div id="chatBox" style="height:150px; overflow-y:auto; border:1px solid #ccc; padding:5px;"></div>
+<input type="text" id="chatInput" placeholder="Type a message">
+<button onclick="sendMessage()">Send</button><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Stream Studio</title>
+<style>
+  body {font-family: Arial; margin:0; padding:0; background:#f4f4f4;}
+  header {background:#007bff; color:white; padding:15px; text-align:center;}
+  .container {padding:15px;}
+  .card {background:white; padding:15px; margin-bottom:15px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+  input, button {width:100%; padding:10px; margin-top:10px; border-radius:5px; border:1px solid #ccc;}
+  button {background:#007bff; color:white; border:none;}
+  .streamCard {background:#e9e9e9; padding:10px; margin-bottom:10px; border-radius:8px;}
+  #chatBox {height:150px; overflow-y:auto; border:1px solid #ccc; padding:5px; background:white; margin-top:10px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Live Stream Studio</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="card">
+    <h2>Dashboard</h2>
+    <p>Welcome, <span id="userDisplay">Guest</span></p>
+  </div>
+
+  <div class="card">
+    <h2>Live Streams Gallery</h2>
+    <div id="streamsGallery">
+      <div class="streamCard">
+        <h3>Stream 1</h3>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="streamCard">
+        <h3>Stream 2</h3>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Live Chat</h2>
+    <div id="chatBox"></div>
+    <input type="text" id="chatInput" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+</div>
+
+<script>
+function login() {
+  const user = document.getElementById('username').value;
+  if(user) {
+    document.getElementById('userDisplay').innerText = user;
+    alert('Login successful!');
+  } else {
+    alert('Enter username!');
+  }
+}
+
+function sendMessage() {
+  const msgInput = document.getElementById('chatInput');
+  const msg = msgInput.value.trim();
+  if(!msg) return;
+  const chatBox = document.getElementById('chatBox');
+  const p = document.createElement('p');
+  p.innerText = msg;
+  chatBox.appendChild(p);
+  msgInput.value = '';
+  chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll
+}
+</script>
+
+</body>
+</html>// Firebase Config
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "PROJECT_ID.firebaseapp.com",
+  databaseURL: "https://PROJECT_ID-default-rtdb.firebaseio.com",
+  projectId: "PROJECT_ID",
+  storageBucket: "PROJECT_ID.appspot.com",
+  messagingSenderId: "SENDER_ID",
+  appId: "APP_ID"
+};<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+  function sendMessage() {
+    const msgInput = document.getElementById('chatInput');
+    const msg = msgInput.value.trim();
+    const user = document.getElementById('userDisplay').innerText || "Guest";
+    if(!msg) return;
+
+    const newMsgRef = database.ref('messages').push();
+    newMsgRef.set({user, message: msg});
+    msgInput.value = '';
+  }
+
+  // Listen for new messages
+  const chatBox = document.getElementById('chatBox');
+  database.ref('messages').on('child_added', (snapshot) => {
+    const data = snapshot.val();
+    const p = document.createElement('p');
+    p.innerHTML = `<strong>${data.user}:</strong> ${data.message}`;
+    chatBox.appendChild(p);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  });
+</script><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Stream Studio</title>
+<style>
+body {font-family: Arial; margin:0; padding:0; background:#f4f4f4;}
+header {background:#007bff; color:white; padding:15px; text-align:center;}
+.container {padding:15px;}
+.card {background:white; padding:15px; margin-bottom:15px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+input, button {width:100%; padding:10px; margin-top:10px; border-radius:5px; border:1px solid #ccc;}
+button {background:#007bff; color:white; border:none;}
+.streamCard {background:#e9e9e9; padding:10px; margin-bottom:10px; border-radius:8px;}
+#chatBox {height:150px; overflow-y:auto; border:1px solid #ccc; padding:5px; background:white; margin-top:10px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Live Stream Studio</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="card">
+    <h2>Dashboard</h2>
+    <p>Welcome, <span id="userDisplay">Guest</span></p>
+  </div>
+
+  <div class="card">
+    <h2>Live Streams Gallery</h2>
+    <div id="streamsGallery">
+      <div class="streamCard">
+        <h3>Stream 1</h3>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="streamCard">
+        <h3>Stream 2</h3>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Live Chat</h2>
+    <div id="chatBox"></div>
+    <input type="text" id="chatInput" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // Firebase Config
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://PROJECT_ID-default-rtdb.firebaseio.com",
+    projectId: "PROJECT_ID",
+    storageBucket: "PROJECT_ID.appspot.com",
+    messagingSenderId: "SENDER_ID",
+    appId: "APP_ID"
+  };
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+  function login() {
+    const user = document.getElementById('username').value;
+    if(user) {
+      document.getElementById('userDisplay').innerText = user;
+      alert('Login successful!');
+    } else {
+      alert('Enter username!');
+    }
+  }
+
+  function sendMessage() {
+    const msgInput = document.getElementById('chatInput');
+    const msg = msgInput.value.trim();
+    const user = document.getElementById('userDisplay').innerText || "Guest";
+    if(!msg) return;
+
+    const newMsgRef = database.ref('messages').push();
+    newMsgRef.set({user, message: msg});
+    msgInput.value = '';
+  }
+
+  const chatBox = document.getElementById('chatBox');
+  database.ref('messages').on('child_added', (snapshot) => {
+    const data = snapshot.val();
+    const p = document.createElement('p');
+    p.innerHTML = `<strong>${data.user}:</strong> ${data.message}`;
+    chatBox.appendChild(p);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  });
+</script>
+
+</body>
+</html>
